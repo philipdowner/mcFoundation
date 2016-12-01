@@ -1,0 +1,344 @@
+{
+	"atoms": {
+		"colors": {
+			"title": "Colors",
+			"description": "Colors provide visual distinction as well as communicating your brand ideals. In addition to your theme colors we will use a standard grayscale utility palette as well as specific colors to indicate statuses, warnings and other important information. Where social media icons are displayed, we will use each site's brand color to increase visual association with each one.",
+			"sectionType": "swatches",
+			"blocks": {
+				"theme": {
+					"title": "Theme Colors",
+					"items": {
+						"primary-color": "Primary Color",
+						"secondary-color": "Secondary Color"
+					}
+				},
+				"utility": {
+					"title": "Utility Colors",
+					"items": {
+						"black": {
+							"title": "Black",
+							"variations": {
+								"range": [10, 90],
+								"increment": 10
+							}
+						},
+						"white": {
+							"title": "White",
+							"variations": {
+								"range": [10, 90],
+								"increment": 10
+							}
+						}
+					}
+				},
+				"status": {
+					"title": "Status Colors",
+					"items": {
+						"alert-color": "Alert",
+						"success-color": "Success",
+						"warning-color": "Warning",
+						"info-color": "Info"
+					}
+				},
+				"social": {
+					"title": "Social Network Colors",
+					"items": {
+						"facebook": "Facebook",
+						"twitter": "Twitter",
+						"pinterest": "Pinterest",
+						"instagram": "Instagram",
+						"googleplus": "Google +",
+						"etsy": "Etsy",
+						"youtube": "YouTube",
+						"linkedin": "LinkedIn",
+						"flickr": "Flickr",
+						"yelp": "Yelp",
+						"houzz": "Houzz",
+						"tripadvisor": "Trip Advisor",
+						"socialOther": "Other Networks"
+					}
+				},
+				"misc": {
+					"title": "Misc Colors",
+					"items": {
+						"themeColor": "ThemeColor"
+					}
+				}
+			}
+		},
+		"text": {
+			"title": "Typography",
+			"description": "Typography is the foundation of a great website. We've selected the following typefaces for their visual clarity and distinction. Certain typefaces will be utiized throughout every page of the site, while others will be reserved for special instances and uses. The following samples help to show the rythm and cadence of the typefaces that have beem chosen, as well as how specific text elements will appear.",
+			"blocks": {
+				"fonts": {
+					"title": "Typeface Selections",
+					"items": {
+						"font-family-sans-serif":
+						{
+							"title": "Primary Font",
+							"font": "Helvetica Neue",
+							"foundry": "TypeKit"
+						},
+						"font-family-serif":
+						{
+							"title": "Secondary Font",
+							"font": "Georgia"
+						}
+					}
+				},
+				"headings": {
+					"title": "Headings",
+					"items": {
+						"h1": "This is a very large header",
+						"h2": "This is a large header",
+						"h3": "This is a medium header",
+						"h4": "This is a moderate header",
+						"h5": "This is a small header",
+						"h6": "This is a tiny header"
+					}
+				},
+				"subheadings": {
+					"title": "Subheadings",
+					"items": {
+						"h1": "This is a very large header",
+						"h2": "This is a large header",
+						"h3": "This is a medium header",
+						"h4": "This is a moderate header",
+						"h5": "This is a small header",
+						"h6": "This is a tiny header"
+					}
+				},
+				"rules": {
+					"title": "Horizontal Rules",
+					"items": {
+						"hr": ""
+					}
+				},
+				"lists": {
+					"title": "Lists",
+					"items": {
+						"ul": "Unordered Lists",
+						"ol": "Ordered Lists",
+						"dl": "Definition Lists"
+					}
+				},
+				"blockquote": {
+					"title": "Blockquote",
+					"items": {
+						"blockquote": ""
+					}
+				},
+				"address": {
+					"title": "Addresses",
+					"items": {
+						"address": "",
+						"v-card": ""
+					}
+				}
+			}
+		},
+		"icons": {
+			"title": "Iconography",
+			"description": "In addition to providing a quick visual reference to a particular section or feature, icons can help visitors to navigate your site and help to keep information interesting and useable. All icons are vector format, meaning that they will scale in response to different devices and pixel ratios.",
+			"blocks": {
+				"fontawesome": {
+					"title": "Icon Library",
+					"items": {
+						"common": {
+							"title": "Common Icons",
+							"icons": ["home", "comment", "download", "envelope-o", "globe", "gear", "info", "photo", "question", "thumbs-o-up", "thumbs-o-down", "user", "users", "at", "calendar", "check", "check-square-o", "clock-o", "cloud-upload", "cloud-download", "exclamation-triangle", "folder-o", "heart", "heart-o", "line-chart", "map-marker", "navicon", "search", "search-plus"]
+						},
+						"social": {
+							"title": "Social Icons",
+							"icons": ["facebook", "google-plus", "houzz", "instagram", "linkedin", "pinterest-p", "share-alt", "tripadvisor", "twitter", "youtube"]
+						},
+						"mcSocialList": {
+							"title": "Social Icons (Colored)",
+							"icons": {"facebook": "facebook", "googleplus": "google-plus", "houzz": "houzz", "instagram": "instagram", "linkedin": "linkedin", "pinterest": "pinterest-p", "other": "share-alt", "tripadvisor": "tripadvisor", "twitter": "twitter", "youtube": "youtube"}
+						},
+						"filetype": {
+							"title": "File Types",
+							"icons": ["file-archive-o", "file-excel-o", "file-image-o", "file-pdf-o", "file-powerpoint-o", "file-video-o", "file-word-o", "file-text-o"]
+						},
+						"ecommerce": {
+							"title": "E-Commerce Icons",
+							"icons": ["shopping-cart", "credit-card", "cc-amex", "cc-diners-club", "cc-discover", "cc-jcb", "cc-mastercard", "cc-paypal", "cc-visa", "money", "usd"]
+						}
+					}
+				}
+			}
+		},
+		"buttons": {
+			"title": "Buttons",
+			"blocks": {
+				"standard": {
+					"title": "Standard Buttons"
+				},
+				"buttongroup": {
+					"title": "Button Groups"
+				},
+				"actions": {
+					"title": "Action Buttons"
+				}
+			}
+		},
+		"labels": {
+			"title": "Labels",
+			"description": "Labels are useful for marking small blocks of text."
+		},
+		"media": {
+			"title": "Multimedia",
+			"blocks": {
+				"images": {
+					"title": "Images"
+				},
+				"video": {
+					"title": "Video Embeds",
+					"items": {
+						"youtube": "https://www.youtube.com/watch?v=_NCPQMC2L1U",
+						"vimeo": "https://vimeo.com/23428725",
+						"vine": "https://vine.co/v/OzOFwMX01it",
+						"ted": "http://www.ted.com/talks/ken_robinson_says_schools_kill_creativity"
+					}
+				},
+				"audio": {
+					"title": "Audio Embeds",
+					"items": {
+						"soundcloud": "https://soundcloud.com/ashestoashesjc/say-something-piano-a-great",
+						"spotify": "https://open.spotify.com/track/4tZIHyRe46VpgRYMJWcqPO"
+					}
+				},
+				"audio": {
+					"title": "Audio Embeds",
+					"items": {
+						"soundcloud": "https://soundcloud.com/ashestoashesjc/say-something-piano-a-great",
+						"spotify": "https://open.spotify.com/track/4tZIHyRe46VpgRYMJWcqPO"
+					}
+				},
+				"social": {
+					"title": "Social Media",
+					"items": {
+						"twitter": "https://twitter.com/manifestphil/status/436563363188211712",
+						"meetup": "http://www.meetup.com/Montana-Programmers/events/226540321/"
+					}
+				},
+				"docs": {
+					"title": "Books & Documents",
+					"items": {
+						"scribd": "https://www.scribd.com/doc/174119826/Healthy-Snacks",
+						"issuu": "http://issuu.com/showcasepubs/docs/nfres-vin4"
+					}
+				},
+				"maps": {
+					"title": "Google Maps",
+					"location": {
+						"lat": 45.769171,
+						"lng": -111.163810
+					}
+				}
+			}
+		}
+	},
+	"molecules": {
+		"alerts": {
+			"title": "Status Alerts",
+			"description": "Alerts are used to notify the user of special, high priority information such as an error on a form submission.",
+			"blocks": {
+				"standard": ""
+			}
+		},
+		"tables": {
+			"title": "Tables",
+			"description": "Tables are best used when presenting tabular data. Imagine that!"
+		},
+		"subnav": {
+			"title": "Sub-Navigation",
+			"description": "Used to help the user navigate through information presented on a page or in a set of results.",
+			"blocks": {
+				"filternav": {},
+				"breadcrumb": {},
+				"sidenav": {},
+				"pagination": {},
+				"inlineLists": {}
+			}
+		}
+	},
+	"organisms": {
+		"forms": {
+			"title": "Forms",
+			"description": "Forms are used to collect information from your users.",
+			"blocks": {
+				"specialinputs": {
+					"title": "Special Input Types"
+				},
+				"progress": {
+					"title": "Progress Bars"
+				},
+				"fields": {
+					"title": "Form Field Examples"
+				}
+			}
+		},
+		"presentation": {
+			"title": "Content Presentation",
+			"description": "These layout elements are available to help you present content in an attractive format.",
+			"blocks": {
+				"accordions": {
+					"title": "Accordions"
+				},
+				"tabs": {
+					"title": "Tabs"
+				},
+				"dropdowns": {
+					"title": "Dropdowns"
+				},
+				"panels": {
+					"title": "Panels"
+				},
+				"reveal": {
+					"title": "Modal Pop-ups"
+				},
+				"tooltips": {
+					"title": "Tooltips"
+				},
+				"block-grid": {
+					"title": "Block Grid"
+				},
+				"slideshows": {
+					"title": "Slideshows"
+				}
+			}
+		},
+		"navigation": {
+			"title": "Navigation",
+			"description": "Navigation methods",
+			"blocks": {
+				"joyride": {
+					"title": "Take a Joyride"
+				},
+				"magellan": {
+					"title": "Magellan"
+				},
+				"iconbar": {
+					"title": "Icon Bar"
+				},
+				"topbar": {
+					"title": "Top Bar"
+				}
+			}
+		},
+		"grid": {
+			"title": "Grid",
+			"blocks": {
+				"layout": {
+					"title": "Layout Grid"
+				},
+				"visibility": {
+					"title": "Visibility Matrix"
+				}
+			}
+		}
+	},
+	"templates": {},
+	"pages": {}
+}

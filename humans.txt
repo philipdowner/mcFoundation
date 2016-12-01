@@ -1,0 +1,11 @@
+/* Manifest Creative is a web development firm that specializes in helping businesses communicate more effectively using the internet. */
+/* manifestbozeman.com */
+
+/* SITE */
+  Standards: HTML5, CSS3
+  Components: WordPress, jQuery, Zurb Foundation 5, Grunt, Bower, Sass
+  Software: Coda, Git
+  Principal Developer: Philip Downer <philip@manifestbozeman.com>
+  
+/* TEAM */
+  Lead Developer: Philip Downer is the lead developer for Manifest Creative. He is a father, WordPress enthusiast and avid photographer. He blogs at philipdowner.com

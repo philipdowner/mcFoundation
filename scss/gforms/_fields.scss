@@ -1,0 +1,691 @@
+/**
+	* FIELD STYLES
+**/
+
+.gform_fields{
+	//Field Sizes
+	input,
+	textarea,
+	select {
+		&.small {
+			width:$gform-input-small-width;
+		}
+		&.medium {
+			width:$gform-input-medium-width;
+		}
+	}
+	.fieldSize-small .gfield_description {
+		width:$gform-input-small-width;
+	}
+	.fieldSize-medium .gfield_description {
+		width:$gform-input-medium-width;
+	}
+	
+	//Left & Right Floats
+	.fieldType-address,
+	.fieldType-email {
+		.ginput_left {
+			width:$gform-input-left-float-width;
+			float:$gform-input-left-float;
+			margin-right:$gform-input-right-float-width - $gform-input-left-float-width;
+		}
+		.ginput_right {
+			width:$gform-input-right-float-width;
+			float:$gform-input-left-float;
+		}
+		@media #{$small-only} {
+			.ginput_left,
+			.ginput_right {
+				width:100%;
+				float:none;
+				margin-right:0;
+			}
+		}
+	}
+	
+	//Sections
+	.fieldType-section {
+		.gsection_container {
+			border-top: $gform-section-border-top;
+			border-bottom: $gform-section-border-bottom;
+			padding: $gform-section-padding;
+			margin-top: $gform-section-margin-top;
+			margin-bottom: $gform-section-margin-bottom;
+			background-color: $gform-section-background-color;
+			.gsection_title {
+				font-size: $gform-section-title-size;
+				color: $gform-section-title-color;
+			}
+			.gsection_description {
+				p:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}//.gsection_container
+		
+		&.noDescription {
+			.gsection_container {
+				border-bottom: none;
+				padding-bottom: 0;
+				.gsection_title {
+					border-bottom: $gform-section-border-bottom;
+				}
+			}
+		}
+	}//.fieldType-section
+	li.gsection:first-child {
+		.gsection_container {
+			margin-top: 0;
+		}
+	}
+	
+	//TextAreas
+	.ginput_counter {
+		padding:$ginput-counter-padding;
+		color:$ginput-counter-color;
+	}
+	
+	//Input groups (Checkboxes & Radios)
+	.inputGroup,
+	.ginput_container.inputGroup {
+		margin-bottom: $form-spacing;
+		label {
+			@include form-label('inline', $base-style:true);
+			font-size: $gform-input-group-label-font-size;
+			top:$gform-input-group-label-top;
+			line-height:$gform-input-group-label-line-height;
+			font-weight:$gform-input-group-label-font-weight;
+			margin:$gform-input-group-label-margin;
+			display:$gform-input-group-label-display;
+			padding-left:$gform-input-group-label-padding-left;
+			text-transform:$gform-input-group-label-text-transform;
+		}
+		input {
+			margin-bottom: 0;
+		}
+		input[type="radio"] {
+			margin-right:$gform-input-group-input-margin;
+		}
+		input[name$="_other"] {
+			width:auto;
+			display: inline-block;
+			margin-left:$gform-input-group-input-margin;
+		}
+	}
+	
+	//Names
+	.fieldType-name {
+		
+			.gfield_description {
+				width:100%;
+			}
+		
+		
+		.ginput_container {
+			@include grid-row($behavior:nest);
+			span {
+				@include grid-column($columns:12);
+				&.name_prefix,
+				&.name_suffix {
+					@include grid-column($columns:$gform-name-prefix-suffix-columns);
+				}
+				input, select { width: 100% !important; }
+			}
+			
+			//4 or more put prefix on own line
+			//&.gf_name_has_3,
+			&.gf_name_has_4,
+			&.gf_name_has_5 {
+				span.name_prefix + span,
+				span.name_suffix {
+					clear:left;
+				}
+			}
+			
+			//2 fields, just make them even regardless of type
+			&.gf_name_has_2 {
+				
+				//Both fields are either normal or prefix/suffix
+				&.has_prefix.has_suffix,
+				&.no_prefix.no_suffix {
+					span {
+						@include grid-column($total-columns/2)
+					}
+				}
+				
+				//1 of each field
+				&.has_prefix.no_suffix,
+				&.no_prefix.has_suffix {
+					span:not(.name_prefix) {
+						&:not(.name_suffix) {
+							@include grid-column($total-columns - $gform-name-prefix-suffix-columns);
+						}
+					}
+				}
+			}//&.gf_name_has_2
+			
+			//3 fields
+			&.gf_name_has_3 {
+				
+				//Both prefix and suffix are present
+				&.has_prefix.has_suffix {
+					span:not(.name_prefix) {
+						&:not(.name_suffix) {
+							@include grid-column($total-columns - $gform-name-prefix-suffix-columns*2);
+						}
+					}
+				}
+				
+				//One of either prefix OR suffix are present
+				&.no_prefix.has_suffix,
+				&.has_prefix.no_suffix {
+					span:not(.name_prefix) {
+						&:not(.name_suffix) {
+							@include grid-column(($total-columns - $gform-name-prefix-suffix-columns)/2);
+						}
+					}
+				}
+				
+				//No prefix or suffix
+				&.no_prefix.no_suffix span {
+					@include grid-column($total-columns/3);
+				}
+			}
+			
+			&.gf_name_has_4 {
+				
+				//Prefix and suffix are own rows
+				&.has_prefix.has_suffix {
+					span:not(.name_prefix) {
+						&:not(.name_suffix) {
+							@include grid-column($total-columns/2);
+						}
+					}
+				}
+				
+				//Remaining 3 fields are normal
+				&.no_prefix,
+				&.no_suffix {
+					span:not(.name_prefix) {
+						&:not(.name_suffix) {
+							@include grid-column($total-columns/3);
+						}
+					}
+				}
+			}
+			
+			//5 fields
+			&.gf_name_has_5 {
+				
+				//Prefix and suffix HAVE to exist to make 5 fields
+				&.has_prefix.has_suffix {
+					span:not(.name_prefix) {
+						&:not(.name_suffix) {
+							@include grid-column($total-columns/3);
+						}
+					}
+				}
+			}
+		}//.ginput_container
+	}//.fieldType-name
+	
+	//Dates
+	.fieldType-date {
+		
+		.gfield_description {
+			width:100%;
+		}
+		
+		//Datepicker
+		&.dateType-datepicker {
+			.ginput_container {
+				@include clearfix;
+			}
+			input.datepicker {
+				float:left;
+				width:100% !important;
+				margin-right:-$gform-datepicker-trigger-icon-width;
+			}
+			img.ui-datepicker-trigger {
+				float:right;
+				position: $gform-datepicker-trigger-icon-position;
+				top:$gform-datepicker-trigger-icon-position-top;
+				left:$gform-datepicker-trigger-icon-position-left;
+			}
+		}
+		
+		//Text and dropdown dates
+		&.dateType-datefield,
+		&.dateType-datedropdown {
+			.clear-multi {
+				@include grid-row($behavior:nest);
+				.ginput_container {
+					@include grid-column($total-columns/3)
+				}
+			}
+		}
+	}
+	
+	//TIME
+	.fieldType-time {
+		.clear-multi {
+			@include grid-row($behavior:nest);
+			.ginput_container {
+				@include grid-column($total-columns/3)
+			}
+			.gfield_time_hour {
+				input {
+					float:left;
+					margin-right:-$gform-time-separator-width;
+				}
+				i {
+					width: $gform-time-separator-width;
+					font-style: $gform-time-separator-font-style;
+					display: block;
+					position: relative;
+					float:$gform-time-separator-float;
+					left:($column-gutter/2) + ($gform-time-separator-width/2);
+					top: $gform-time-separator-position-top;
+				}
+			}
+		}
+	}
+	
+	//ADDRESS
+	.fieldType-address {
+		.gfield_description {
+			width:100%;
+		}
+	}
+	
+	//File Upload
+	.fieldType-fileupload {
+		.gfield_description {
+			width:100%;
+		}
+		#extensions_message {
+			display: $gform-upload-extensions-display;
+			position: $gform-upload-extensions-position;
+			top: $gform-upload-extensions-top;
+			font-size: $gform-upload-extensions-font-size;
+			line-height: $gform-upload-extensions-line-height;
+			margin-top: $gform-upload-extensions-margin-top;
+			margin-bottom: $gform-upload-extensions-margin-bottom;
+		}
+		.ginput_container_fileupload {
+			background-color:$gform-upload-background-color;
+			margin-bottom: $gform-upload-margin-bottom;
+			padding: $gform-upload-padding;
+			border-radius: $gform-upload-border-radius;
+			border: $gform-upload-border;
+			input[type="file"] {
+				margin-top:$gform-upload-input-margin-top;
+				margin-bottom:$gform-upload-input-margin-bottom;
+			}
+		}
+		.gform_drop_area {
+			position: relative;
+			margin-left:-$gform-upload-padding;
+			margin-right: -$gform-upload-padding;
+			margin-top:-$gform-upload-padding;
+			margin-bottom:$gform-upload-input-margin-bottom*2;
+			padding:$gform-upload-padding;
+			background-color:$white50;
+			.gform_drop_instructions {
+				padding-right:$gform-upload-padding/2;
+			}
+			input[type="button"] {
+				margin-bottom:0;
+			}
+		}
+		.ginput_preview {
+			padding: $gform-upload-padding;
+			background-color:$black10;
+			&:first-child {
+				margin-top:-$gform-upload-margin-bottom;
+				padding-bottom: 0;
+			}
+			&:last-child {
+				margin-bottom: $form-spacing;
+				padding-bottom:$gform-upload-padding;
+			}
+			img {
+				position:$gform-upload-clear-icon-position;
+				top:$gform-upload-clear-icon-position-top;
+				margin-right:$gform-upload-clear-icon-margin-right;
+				cursor:$gform-upload-clear-icon-cursor;
+			}
+			strong {
+				font-weight: normal;
+			}
+		}
+	}//.fieldType-fileupload
+	
+	//LIST
+	.fieldType-list {
+		.gfield_list {
+			min-width:$gform-list-min-width;
+			border:$gform-list-border;
+			tr,
+			td {
+				background-color:transparent !important;
+			}
+			td {
+				vertical-align: middle;
+				padding:0 0 $form-spacing;
+			}
+			tbody tr:last-child td {
+				padding-bottom: 0;
+			}
+			.gfield_list_icons {
+				text-align: left;
+				padding-left:$form-spacing/2;
+				img {
+					display: inline-block;
+					margin:$gform-list-img-margin;
+					&.gfield_icon_disabled {
+						opacity:$gform-list-img-disabled-opacity;
+					}
+				}
+			}
+			input {
+				margin-bottom: 0;
+			}
+		}
+		&.noColumns {
+			.gfield_list {
+				border:none;
+			}
+		}
+		&.hasColumns {
+			.gfield_list {
+				thead {
+					background-color:$gform-list-th-background-color;
+				}
+				th, td {
+					padding:$form-spacing/2 $form-spacing 0 0;
+				}
+				th {
+					font-weight:$gform-list-th-font-weight;
+					border-bottom:$gform-list-th-border-bottom;
+					padding-bottom: $form-spacing/2;
+				}
+			}
+		}
+	}//.fieldType-list
+	
+	
+	//Captcha
+	.fieldType-captcha {
+		margin-bottom: $form-spacing;
+	}
+	
+	//Post Image
+	.fieldType-post_image {
+		.ginput_container {
+			padding:$gform-upload-padding;
+			background-color: $gform-upload-background-color;
+			border-radius: $gform-upload-border-radius;
+			border: $gform-upload-border;
+			margin-top: $gform-upload-input-margin-top;
+			margin-bottom: $gform-upload-margin-bottom;
+			.ginput_full {
+				display: block;
+			}
+			.ginput_full:last-child {
+				margin-bottom: -$form-spacing;
+			}
+		}
+		&.hasMeta {
+			input[type="file"] {
+				padding-bottom: $gform-upload-padding/2;
+			}
+		}
+	}//.fieldType-post_image
+	
+	//Product Quantity
+	.fieldType-quantity {
+		input[type="number"] {
+			max-width:$gform-quantity-input-max-width;
+		}
+	}
+	
+	//Product Option
+	.fieldType-option {}
+	
+	//Product Total
+	.fieldType-total {
+		.ginput_container_total {
+			padding-top: $form-spacing/2;
+			font-size:$gform-total-font-size;
+			font-weight:$gform-total-font-weight;
+			color:$gform-total-color;
+			font-family:$gform-total-font-family;
+		}
+	}
+	
+	/*************************
+	* LEFT/RIGHT ALIGNED LABELS
+	**************************/
+	&.left_label,
+	&.right_label {
+		li {
+			clear:both;
+		}
+		.fieldWrap {
+			@include clearfix;
+			& > label {
+				width:$gform-leftlabel-label-width;
+				line-height:$gform-leftlabel-label-line-height;
+				& + .ginput_container,
+				& + .clear-multi {
+					width: $gform-leftlabel-ginput-width;
+				}
+			}
+			.gfield_description,
+			.instruction {
+				clear:both;
+			}
+			&.small-12 {
+				width: 100% !important;
+				&.medium-6 {
+					& > .ginput_container,
+					& > .clear-multi {
+						width:$gform-leftlabel-ginput-width-small;
+					}
+				}
+			}
+		}//.fieldWrap
+		.gfield.field_sublabel_above {
+			.ginput_container label:first-child {
+				margin-top:-4px;
+			}
+			.fieldWrap > label.gfield_label {
+				padding-top:$form-spacing+($form-spacing/2);
+			}
+		}
+	}//&.left_label.right_label
+	
+	&.left_label {
+		.fieldWrap {
+			& > label {
+				float:left;
+				padding:$form-spacing $form-spacing 0 0;
+				text-align: right;
+				& + .ginput_container,
+				& + .clear-multi {
+					float:left;
+				}
+			}
+			.gfield_description {
+				margin-left:$gform-leftlabel-ginput-width;
+			}
+		}//.fieldWrap
+	}//&.left_label
+	
+	&.right_label {
+		.fieldWrap {
+			& > label {
+				float:right;
+				padding: $form-spacing 0 0 $form-spacing;
+				text-align: left;
+				display: block;
+				& + .ginput_container,
+				& + .clear-multi {
+					float:right;
+					& > input,
+					& > textarea,
+					& > select {
+						float:right;
+					}
+				}
+				& + .ginput_container.inputGroup {
+					margin-top: $form-spacing;
+					& > li {
+						@include clearfix;
+						float:right;
+						display: block;
+						padding-bottom: $form-spacing/2;
+						input,
+						input[type="checkbox"],
+						input[type="radio"] {
+							float:right;
+							margin-left:$gform-input-group-input-margin;
+							line-height:$paragraph-line-height;
+						}
+						label {
+							float:right;
+							padding-top:0;
+							top:0;
+							padding-left:0;
+							line-height:1;
+						}
+					}
+				}
+			}
+			.gfield_description {
+				text-align: right;
+				margin-right:$gform-leftlabel-ginput-width;
+			}
+			.instruction {
+				text-align: right;
+			}
+		}//.fieldWrap
+		
+		//Textareas
+		.ginput_counter {
+			clear:both;
+			text-align: right;
+		}
+		
+		//Name Fields
+		.fieldType-name {
+			.ginput_container {
+				span {
+					float:right !important;
+				}
+			}
+		}
+		
+		//DatePicker
+		.fieldType-date {
+			&.dateType-datepicker {
+				input.datepicker {
+					margin-right: 0;
+					margin-left:-$gform-datepicker-trigger-icon-width;
+				}
+				img.ui-datepicker-trigger {
+					float:left;
+					left:$gform-datepicker-trigger-icon-position-left*-1;
+				}
+			}
+		}
+		
+		.fieldType-address {
+			.ginput_left.address_zip {
+				float:right;
+				margin-right:0;
+			}
+		}
+		
+		//File Upload
+		.fieldType-fileupload {
+			input[type="file"] {
+				float:none !important;
+			}
+		}
+		
+		//Lists
+		.fieldType-list {
+			.gfield_list {
+				float:right;
+			}
+		}
+		
+		//CAPTCHA
+		.fieldType-captcha {
+			#recaptcha_widget_div {
+				float:right;
+				font-size: inherit;
+				input {
+					float:none;
+				}
+			}
+		}
+		
+		//Product Total
+		.fieldType-total {
+			.ginput_container_total {
+				padding-top:$form-spacing;
+				text-align: right;
+			}
+		}
+		
+		//Checkbox Groups
+		.inputGroup {
+			display: inline-block;
+		}
+	}//&.right_label
+	
+	/*************************
+	* SUBLABELS ABOVE
+	**************************/
+	.gfield.field_sublabel_above {
+		.ginput_container {
+			label:first-child {
+				top:0;
+			}
+		}
+	}
+	.gfield.field_description_above {
+		.gfield_description {
+			top:0;
+			&.validation_message {
+				top:$input-description-position-top;
+			}
+		}
+	}
+	&.right_label {
+		.gfield.field_sublabel_above {
+			label:not(.gfield_label) {
+				text-align: right;
+			}
+		}
+	}
+	
+	/*************************
+	* VALIDATION ERRORS
+	**************************/
+	.gfield_error {
+		.validation_message {
+			@include form-error-message;
+			margin-top:0;
+		}
+//		.gfield_description + .validation_message {
+//			margin-top:0;
+//		}
+		label {
+			@include form-label-error-color;
+		}
+	}
+}//.gform_fields

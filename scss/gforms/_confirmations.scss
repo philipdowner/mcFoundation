@@ -1,0 +1,3 @@
+.gforms_confirmation_message {
+	@include alert($success-color, $global-radius);
+}

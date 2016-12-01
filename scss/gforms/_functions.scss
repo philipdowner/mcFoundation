@@ -1,0 +1,6 @@
+@function gform_image($url) {
+	@if str-index($url, '/') != 1 {
+		$url: '/' + $url;
+	}
+	@return $gform-image-path + '/' + $url;
+}

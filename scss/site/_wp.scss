@@ -1,0 +1,110 @@
+@import "mixins";
+
+/*************************
+* ADMIN BAR & ADMIN FRONT-END
+**************************/
+// Fix the issue where the WP adminbar overlaps the mobile menu
+#wpadminbar {
+	position: fixed !important;
+}
+body.f-topbar-fixed.admin-bar {
+	#wpadminbar {
+		display:none;
+	}
+}
+
+/*************************
+* HEADINGS
+**************************/
+h1 {}
+h2 {}
+h3 {}
+h4 {}
+h5 {}
+h6 {}
+
+/*************************
+* BLOCKQUOTES
+**************************/
+blockquote {
+	font-family:$blockquote-font-family;
+	font-style:$blockquote-font-style;
+	font-size: $blockquote-font-size;
+	p {
+		font-size:inherit;
+		font-style:inherit;
+		line-height: inherit;
+	}
+	cite {
+		font-style:$blockquote-cite-font-style;
+		font-family:$blockquote-cite-font-family;
+		font-size:$blockquote-cite-font-size;
+	}
+}
+
+/*************************
+* ADDRESS
+**************************/
+address {
+	font-style: $address-font-style;
+	font-size:$paragraph-font-size;
+	margin-bottom: $paragraph-margin-bottom;
+}
+
+/*************************
+* IMAGES, CAPTIONS, FIGURES
+**************************/
+//Image elements
+img[class^="wp-image-"],
+img[class*=" wp-image-"] {
+	//@extend .th;
+}
+
+// Reset margin and padding on figure element
+figure { 
+	margin: 0; 
+	padding: 0;
+	max-width: 100%;
+}
+
+// Add some basic styling for figcaption element
+figcaption {
+	font-family: $figcaption-font-family;
+	color: $figcaption-color;
+	font-size: $figcaption-font-size;
+	background-color:$figcaption-bg-color;
+	margin:$figcaption-margin;
+	padding:$figcaption-padding;
+	p {
+		font-size:inherit;
+	}
+}
+
+// Add the alignment classes used by the WordPress media library
+.alignleft {
+	float: left;
+}
+
+.alignright {
+	float: right;
+}
+
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+blockquote.alignleft,
+img.alignleft {
+	margin: rem-calc(7) rem-calc(24) rem-calc(7) 0;
+}
+
+.wp-caption.alignleft {
+	margin: rem-calc(7) rem-calc(14) rem-calc(7) 0;
+}
+
+blockquote.alignright,
+img.alignright {
+	margin: rem-calc(7) 0 rem-calc(7) rem-calc(24);
+}

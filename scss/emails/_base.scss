@@ -1,0 +1,78 @@
+#wrapper {
+	@import "../site/wp";
+	width:$wrapper-width;
+	font-family:$font-family-sans-serif;
+	font-size:$rem-base;
+	margin:$wrapper-margin;
+	border:1px solid $black50;
+	border-radius:$global-radius;
+	img {
+		display: inline-block;
+		margin:0;
+		max-width: none;
+	}
+	.button {
+		margin-bottom: 0;
+	}
+	#header,
+	#body,
+	#footer {
+		//padding:$column-gutter !important;
+	}
+	table {
+		width:100%;
+		border:none;
+		padding:0;
+		tr.row {
+			display: table-row;
+		}
+		td {
+			padding:0;
+			vertical-align: top;
+			&.valign-top {
+				vertical-align: top !important;
+			}
+			&.valign-middle {
+				vertical-align: middle !important;
+			}
+			&.valign-bottom {
+				vertical-align: bottom !important;
+			}
+			& > p:last-child {
+				margin-bottom: 0;
+			}
+		}
+		td.columns {
+			padding:0 $column-gutter/2 !important;
+			float:none !important;
+			display: table-cell !important;
+		}
+	}
+	
+	#headline h1 {
+		color:$primary-color !important;
+		margin-bottom: $column-gutter;
+	}
+	.globalLogo {
+		display: block;
+		text-align:center;
+	}
+	
+	#bodyWrap {
+		padding-bottom: $column-gutter;
+	}
+	
+	#footerWrap {
+		background-color:$black20;
+		padding:$column-gutter/2 0;
+	}
+	#footer {
+		font-size:14px;
+		* {
+			font-size:inherit;
+		}
+		@include headings() {
+			font-weight: $font-weight-bold;
+		}
+	}
+}

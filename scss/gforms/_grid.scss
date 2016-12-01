@@ -1,0 +1,39 @@
+	/**
+		* GRID
+	**/
+	.gform_heading,
+	.gform_body {
+		//@include grid-row($behavior:nest);
+		
+	}
+	.gform_description {
+		//@include grid-column($columns:$total-columns);
+	}
+//	.gform_fields {
+//		@include grid-row();
+//	}
+//	& > form > div {
+//		@include grid-column($columns:$total-columns);
+//		& > div
+//		& > .gform_fields {
+//			@include grid-row(); //Don't nest row when already nested
+//		}
+//	}
+//	.gfield {
+//		//@include grid-column($columns:$total-columns);
+//		@include grid-row();
+//	}
+//	.ginput_complex.ginput_container {
+//		@include grid-row($behavior:nest);
+//		
+//		//Each span is a column
+//		& > span {
+//			@include grid-column($columns:6);
+//		}
+//	}
+//	.gfield .clear-multi {
+//		@include grid-row();
+//		& > div {
+//			@include grid-column($columns:4,$collapse:true);
+//		}
+//	}

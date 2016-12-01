@@ -1,0 +1,19 @@
+.DS_Store
+*.log
+*.bak
+
+# Keep specific image assets
+assets/*
+!assets/foundation-icons/
+!assets/images/template/logo.svg
+!assets/vendor/slickjs/
+
+#Ignore composed or built files
+node_modules/
+bower_components/
+css/
+inc/vendor/
+
+#Keep JS source files
+js/*
+!js/src/

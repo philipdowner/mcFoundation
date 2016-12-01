@@ -1,0 +1,93 @@
+@import "variables";
+@import "functions";
+@import "confirmations";
+
+/*************************
+* GRAVITY FORMS
+**************************/
+.gform_wrapper {	
+
+	@import "fields";
+	@import "chosen";
+	
+	ul.gform_fields {
+		list-style: none;
+		margin:$gform-gfields-list-margin;
+	}
+	
+	/**
+		* STYLISTIC
+	**/
+	.gfield_required {
+		@extend span.required;
+	}
+	
+	//Nested Labels & Descriptions
+	.ginput_container label,
+	.ginput_container .instruction,
+	.gfield_description,
+	.ginput_counter {
+		font-family: $input-description-font-family;
+		font-weight: $input-description-font-weight;
+		font-size: $input-description-font-size;
+		text-transform: $input-description-text-transform;
+		position: relative;
+		top: $input-description-position-top;
+		line-height: $input-description-line-height;
+		margin-bottom: $input-description-margin-bottom;
+	}
+	.ginput_container label {
+		font-weight: $gform-container-label-font-weight;
+		font-size: $gform-container-label-font-size;
+		color: $gform-container-label-color;
+		text-transform: $gform-container-label-text-transform;
+	}
+	
+	//Validation Errors
+	.validation_error {
+		@include alert($alert-color, $global-radius);
+	}
+	
+	//Progress Bar
+	.gf_progressbar_wrapper {
+		.gf_progressbar_title {
+			font-size: $h4-font-size;
+		}
+		.gf_progressbar {
+			@include progress-container;
+		}
+		.gf_progressbar_percentage {
+			@include progress-meter;
+			& > span {
+				display: block;
+				color: $progress-meter-text-color;
+				font-size: $progress-meter-font-size;
+				text-align: $progress-meter-text-align;
+				line-height: $progress-meter-line-height;
+				padding: $progress-meter-pad;
+			}
+		}
+	}//.gf_progressbar_wrapper
+		
+	/**
+		* VISIBILITY
+	**/
+	//Honeypot
+	.gform_validation_container {
+		display: none !important;
+	}
+	
+	/**
+		* FOOTER
+	**/
+	.gform_footer {
+		padding-top:$form-spacing;
+		&.left_label,
+		&.right_label {
+			text-align: right;
+		}
+		&.right_label {
+			margin-right:20%;
+		}
+	}
+}//.gform_wrapper

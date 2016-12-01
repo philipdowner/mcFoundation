@@ -1,0 +1,11 @@
+@charset "UTF-8";
+@import "config/settings";
+@import "../bower_components/foundation/scss/foundation/components/type";
+@import "../bower_components/foundation/scss/foundation/components/clearing";
+@import "../bower_components/foundation/scss/foundation/components/tables";
+@import "../bower_components/foundation/scss/foundation/components/thumbs";
+
+body#tinymce.wp-editor {
+	font-size:$rem-base;
+	@import 'site/wp';
+}

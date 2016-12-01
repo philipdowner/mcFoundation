@@ -1,0 +1,126 @@
+/***********************************************************************
+* !TYPOGRAPHY
+/***********************************************************************/
+@mixin headings($from: 1, $to: 6){
+    @for $i from $from through $to {
+      h#{$i}{
+        @content
+      }
+    }
+}
+
+@mixin scale-headings($amount, $from:1, $to:6) {
+	@for $i from $from through $to {
+		@if $i == 1 { h1 { font-size: $h1-font-size + $amount; } }
+		@if $i == 2 { h2 { font-size: $h2-font-size + $amount; } }
+		@if $i == 3 { h3 { font-size: $h3-font-size + $amount; } }
+		@if $i == 4 { h4 { font-size: $h4-font-size + $amount; } }
+		@if $i == 5 { h5 { font-size: $h5-font-size + $amount; } }
+		@if $i == 6 { h6 { font-size: $h6-font-size + $amount; } }
+	}
+}
+
+/***********************************************************************
+* !COLORS
+/***********************************************************************/
+/**
+* GRADIENT
+*
+* @see http://codepen.io/Hornebom/pen/epqmGx/
+* @param string $bgColor Background color of element and gradient start color
+* @param int $angle Gradient angle
+* @param string $gradientColor Gradient end color
+* @param float $opacityStart A float percentage between 0 and 1
+* @param float $opacityEnd A float percentage between 0 and 1
+*/
+@mixin gradient (
+$bgColor,       // background-color
+$angle,         // gradient angle
+$gradientColor, // gradient color
+$opacityStart,  // opacity at start > 1 - 0
+$opacityEnd     // opacity at end > 1 - 0
+) {
+  background-color: $bgColor;
+  background-image: linear-gradient(
+    ($angle * 1deg),
+    rgba($gradientColor, $opacityStart),
+    rgba($gradientColor, $opacityEnd)
+  );
+  background-size: 100% 100%;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+}
+/***********************************************************************
+* !MOBILE
+/***********************************************************************/
+@mixin stack() {
+	width:100%;
+	float:none;
+}
+/***********************************************************************
+* !PAGEBUILDER
+/***********************************************************************/
+@mixin pb-colored-bg($bg: $pb-colored-bg-color) {
+	$bg-lightness: lightness($bg);
+	
+	@if $bg-lightness > 70% {
+		$pb-colored-bg-headings-color: $pb-color-bg-font-color-alt;
+		$pb-colored-bg-font-color: $pb-color-bg-font-color-alt;
+		$pb-colored-bg-link-color: $pb-colored-bg-color;
+		$pb-colored-bg-blockquote-font-color: $pb-color-bg-font-color-alt;
+		$pb-colored-bg-blockquote-border-color: $pb-color-bg-font-color-alt;
+		$pb-colored-bg-blockquote-cite-font-color: $pb-color-bg-font-color-alt;
+		$pb-colored-bg-blockquote-cite-link-color: $pb-colored-bg-color;
+		$pb-colored-bg-button-color: $pb-colored-bg-color;
+	}
+	
+	background-color:$bg;
+	padding: $pb-full-width-padding;
+	color: $pb-colored-bg-font-color;
+	
+	a {
+			color:$pb-colored-bg-link-color;
+	}
+	@include headings() {
+		&, a {
+			color:$pb-colored-bg-headings-color;
+		}
+	}
+	.headline {
+		margin-bottom:$pb-full-width-padding;
+	}
+	blockquote, blockquote p {
+		color:$pb-colored-bg-blockquote-font-color;
+	}
+	blockquote {
+		border-color:$pb-colored-bg-blockquote-border-color;
+		cite {
+			color:$pb-colored-bg-blockquote-cite-font-color;
+			a {
+				color:$pb-colored-bg-blockquote-cite-link-color;
+			}
+		}
+	}
+	.fa {
+		
+	}
+	.button {
+		@include button-style($pb-colored-bg-button-color);
+	}
+}//pb-colored-bg()
+
+@mixin thumbnail-block-grid($per-row) {
+	> li {
+		clear:none;
+		width:100%/$per-row;
+		&:nth-of-type(#{$per-row}n+2) { clear:both; }
+		&:nth-of-type(#{$per-row}n+1) { clear:none; }
+	}
+}
+@mixin thumbnail-block-grid-html-classes($size) {
+	@for $i from 1 through $block-grid-elements {
+		.#{$size}-block-grid-#{($i)}.firstLarge {
+			@include thumbnail-block-grid($i);
+		}
+	}
+}

@@ -1,0 +1,122 @@
+$gform-path: '../../../plugins/gravityforms';
+$gform-image-path: $gform-path + '/images';
+
+//Fields List
+$gform-gfields-list-margin: 0;
+
+//Notes and descriptions
+$gform-container-label-font-weight: $input-description-font-weight;
+$gform-container-label-font-size: $input-description-font-size;
+$gform-container-label-color: $input-description-color;
+$gform-container-label-text-transform: $input-description-text-transform;
+
+//Input Sizes
+$gform-input-small-width: 35%;
+$gform-input-medium-width: 50%;
+$gform-input-large-width: 100%;
+
+//Left & Right Floats
+$gform-input-left-float: left;
+$gform-input-left-float-width:48%;
+$gform-input-right-float: right;
+$gform-input-right-float-width:50%;
+
+//Section Breaks
+$gform-section-border-top: none;
+$gform-section-border-bottom: 1px solid $black10;
+$gform-section-margin-top: $form-spacing;
+$gform-section-margin-bottom: $form-spacing;
+$gform-section-padding: 0 0 $form-spacing 0;
+$gform-section-title-size: $h4-font-size;
+$gform-section-title-color: $header-font-color;
+$gform-section-background-color: transparent;
+
+//Select - Chosen Enhanced UI
+$gform-chosen-font-size: inherit;
+$gform-chosen-drop-border-width: $input-border-width;
+$gform-chosen-drop-border-style: $input-border-style;
+$gform-chosen-drop-border-color: $input-border-color;
+$gform-chosen-drop-border-radius: $input-border-radius;
+$gform-chosen-drop-background-color: $select-bg-color;
+$gform-chosen-drop-box-shadow: 2px 2px 5px rgba($primary-color,0.1);
+$gform-chosen-input-background-color: $input-bg-color;
+$gform-chosen-result-padding:rem-calc(5 10);
+$gform-chosen-active-result-font-style: normal;
+$gform-chosen-active-result-text-decoration: underline;
+$gform-chosen-highlight-bg-color: $info-color;
+
+//Input groups
+//$gform-input-group-
+$gform-input-group-label-font-size: inherit;
+$gform-input-group-label-font-weight: $input-description-font-weight; 
+$gform-input-group-label-top:rem-calc(1);
+$gform-input-group-label-line-height: inherit;
+$gform-input-group-label-margin:0;
+$gform-input-group-label-display:inline-block;
+$gform-input-group-label-padding-left:rem-calc(5);
+$gform-input-group-label-text-transform: $input-description-text-transform;
+$gform-input-group-input-margin:rem-calc(5);
+
+//Textareas
+$ginput-counter-padding: rem-calc(5px 0);
+$ginput-counter-color: $warning-color;
+
+//Name Fields
+$gform-name-prefix-suffix-columns: 2; //works best as even number for now
+
+//Datepicker
+$gform-datepicker-trigger-icon-width: 17px;
+$gform-datepicker-trigger-icon-height: 16px;
+$gform-datepicker-trigger-icon-position: relative;
+$gform-datepicker-trigger-icon-position-top: 11px;
+$gform-datepicker-trigger-icon-position-left: -11px;
+
+//Time
+$gform-time-separator-width:rem-calc(4);
+$gform-time-separator-font-style: normal;
+$gform-time-separator-position-top:rem-calc(5);
+$gform-time-separator-float: right;
+
+//File Upload
+$gform-upload-extensions-display: block;
+$gform-upload-extensions-position: relative;
+$gform-upload-extensions-top: 0;
+$gform-upload-extensions-line-height: inherit;
+$gform-upload-extensions-margin-top: $form-spacing/2;
+$gform-upload-extensions-margin-bottom: 0;
+$gform-upload-extensions-font-size: $input-description-font-size;
+$gform-upload-padding: $column-gutter/2;
+$gform-upload-margin-bottom: $form-spacing;
+$gform-upload-background-color: scale-color($info-color, $lightness: 70%);
+$gform-upload-border-radius: $global-radius;
+$gform-upload-border: 5px dashed $info-color;
+$gform-upload-input-margin-top: 0;
+$gform-upload-input-margin-bottom: $form-spacing/2;
+$gform-upload-clear-icon-position:relative;
+$gform-upload-clear-icon-position-top:rem-calc(-1);
+$gform-upload-clear-icon-margin-right:rem-calc(3);
+$gform-upload-clear-icon-cursor:pointer;
+
+//List
+$gform-list-min-width:rem-calc(400);
+$gform-list-border:none;
+$gform-list-img-margin: 0 rem-calc(5) 0 0 !important;
+$gform-list-img-disabled-opacity: 0.3;
+$gform-list-th-background-color:transparent;
+$gform-list-th-font-weight:normal;
+$gform-list-th-border-bottom:1px solid $black20;
+
+//Product Quantity
+$gform-quantity-input-max-width:rem-calc(100);
+
+//Product Total
+$gform-total-font-size:$paragraph-font-size*2;
+$gform-total-font-weight:$font-weight-bold;
+$gform-total-color:$primary-color;
+$gform-total-font-family:$font-family-serif;
+
+//Left & Right Aligned Labels
+$gform-leftlabel-label-width:20%;
+$gform-leftlabel-label-line-height: 1;
+$gform-leftlabel-ginput-width:100% - $gform-leftlabel-label-width;
+$gform-leftlabel-ginput-width-small:$gform-input-small-width;

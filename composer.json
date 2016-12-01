@@ -1,0 +1,8 @@
+{
+    "config": {
+	    "vendor-dir": "inc/vendor"
+    },
+    "require": {
+	    "tijsverkoyen/css-to-inline-styles": "^1.5"
+    }
+}
