@@ -1,4 +1,15 @@
 {
+    "name": "philipdowner/mcfoundation",
+    "type": "wordpress-theme",
+    "description": "WordPress starter theme by Manifest Creative",
+    "version": "1.0.0",
+    "authors": [
+      {
+        "name": "Philip Downer",
+        "email": "philip@manifestbozeman.com",
+        "homepage": "http://philipdowner.com"
+      }
+    ],
     "config": {
 	    "vendor-dir": "inc/vendor"
     },
